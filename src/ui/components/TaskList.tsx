@@ -1,5 +1,4 @@
 import { useTaskContext } from "../../app/context/useTaskContext";
-import { aFunc } from "../../bidule";
 
 const styles = {
   list: { listStyle: "none", padding: 0 },
@@ -11,10 +10,8 @@ const styles = {
   },
 };
 
-export const legacyRules: Array<string> = [];
-
 export const TaskList = () => {
-  const { tasks, removeTask } = useTaskContext();
+  const { tasks, toggleTask, removeTask } = useTaskContext();
 
   if (tasks.length === 0) return <p>Aucune tâche.</p>;
 
@@ -25,7 +22,7 @@ export const TaskList = () => {
           <input
             type="checkbox"
             checked={task.completed}
-            onChange={() => aFunc(task.id)}
+            onChange={() => toggleTask(task.id)}
           />
           <span
             style={{ textDecoration: task.completed ? "line-through" : "none" }}

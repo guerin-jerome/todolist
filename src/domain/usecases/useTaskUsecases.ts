@@ -12,10 +12,15 @@ export const useTaskUsecases = (repo: TaskRepository) => {
     setTasks(repo.getAll());
   };
 
+  const toggleTask = (id: string) => {
+    repo.toggle(id);
+    setTasks(repo.getAll());
+  };
+
   const removeTask = (id: string) => {
     repo.remove(id);
     setTasks(repo.getAll());
   };
 
-  return { tasks, addTask, removeTask };
+  return { tasks, addTask, toggleTask, removeTask };
 };
