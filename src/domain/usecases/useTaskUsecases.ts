@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { TaskRepository } from '../ports/TaskRepository';
-import { Task } from '../models/Task';
-import { v4 as uuidv4 } from 'uuid';
+import { useState } from "react";
+import { TaskRepository } from "../ports/TaskRepository";
+import { Task } from "../models/Task";
+import { v4 as uuidv4 } from "uuid";
 
 export const useTaskUsecases = (repo: TaskRepository) => {
   const [tasks, setTasks] = useState<Task[]>(repo.getAll());
@@ -12,15 +12,10 @@ export const useTaskUsecases = (repo: TaskRepository) => {
     setTasks(repo.getAll());
   };
 
-  const toggleTask = (id: string) => {
-    repo.toggle(id);
-    setTasks(repo.getAll());
-  };
-
   const removeTask = (id: string) => {
     repo.remove(id);
     setTasks(repo.getAll());
   };
 
-  return { tasks, addTask, toggleTask, removeTask };
+  return { tasks, addTask, removeTask };
 };
