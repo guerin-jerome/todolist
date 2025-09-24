@@ -1,6 +1,8 @@
 # 👋🏻 Bonjour tout le monde
 
-Ici vous trouverez tout le code du début de ma présentation à Paris Web 2025 "Mettez de l'ordre dans votre code".
+Ici vous trouverez tout le code final de ma présentation à Paris Web 2025 "Mettez de l'ordre dans votre code".
+
+Ainsi que les deux graphiques générés lors de la démonstration en direct `dependency-graph-initial.svg` et `dependency-graph.svg`.
 
 > Lien de la conférence : ⌛️ À venir...
 
